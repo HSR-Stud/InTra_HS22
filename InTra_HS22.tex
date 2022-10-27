@@ -8,6 +8,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages
 
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{multicol}
+\usepackage{pdfpages}
+
+
 %% TODO: publish to CTAN
 \usepackage{tex/hsrstud}
 
@@ -27,16 +33,15 @@
 % Metadata
 
 \course{Elektrotechnik}
-\module{ModAbk}
-\semester{Fr\"uhlingssemester 2020}
+\module{InTra}
+\semester{Herbstsemester 2020}
 
-\authoremail{vorname.name@ost.ch}
-\author{\textsl{Vorname Name} -- \texttt{\theauthoremail}}
+\authoremail{joel.Leirer@ost.ch}
+\author{\textsl{Joël Leirer} -- \texttt{\theauthoremail}}
 
 % did someone help you with this work?
 \contributors{
   % I created this template, does that count?
-  Naoki Pross
   % do not forget to add yourself!
 }
 
@@ -70,10 +75,13 @@
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-\section{Einf\"uhrung}
-\[
-  i\hbar \partial_t \left| \psi(t) \right\rangle 
-    = \hat{H} \left| \psi(t) \right\rangle
-\]
+\input{include/Integraltransformationen/Integraltransformationen.tex}
+\input{include/Wichtige Funktionen/Wichtige Funktionen.tex}
+
+\input{include/LTI-Systeme_kurz/LTI-Systeme_kurz.tex}
+\input{include/Wichtige Werte & Vereinfachungen/Wichtige Werte & Vereinfachungen.tex}
+
+\newpage
+\includepdf[pages=-]{AnhangPDF/fourierLaplaceTabelle_v02.pdf}
 
 \end{document}
