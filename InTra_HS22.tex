@@ -12,7 +12,9 @@
 \usepackage{bm}
 \usepackage{multicol}
 \usepackage{pdfpages}
-
+\usepackage{color, colortbl}
+\usepackage{trfsigns}
+\usepackage{mathrsfs}
 
 %% TODO: publish to CTAN
 \usepackage{tex/hsrstud}
@@ -29,12 +31,17 @@
     lang={german},
 ]{doclicense}
 
+% Color configuration
+
+\definecolor{TabularBackgroundColor}{rgb}{0.83,0.96,0.96}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Metadata
 
 \course{Elektrotechnik}
 \module{InTra}
-\semester{Herbstsemester 2020}
+\semester{Herbstsemester 2022}
 
 \authoremail{joel.Leirer@ost.ch}
 \author{\textsl{Joël Leirer} -- \texttt{\theauthoremail}}
@@ -68,6 +75,15 @@
 \section*{Lizenz}
 \doclicenseThis
 
+\subsection*{Note:}
+Erlaubte Hilfsmittel HS22:
+\begin{itemize}
+  \item 4 A4-Seiten Zusammenfassung
+  \item Formelsammlung Fourier-/Laplacetransformation 
+\end{itemize} 
+
+
+\newpage
 \tableofcontents
 
 % actual content
@@ -80,6 +96,8 @@
 
 \input{include/LTI-Systeme_kurz/LTI-Systeme_kurz.tex}
 \input{include/Wichtige Werte & Vereinfachungen/Wichtige Werte & Vereinfachungen.tex}
+\include{include/Integrieren und Differenzieren/Integrieren und Differenzieren.tex}
+
 
 \newpage
 \includepdf[pages=-]{AnhangPDF/fourierLaplaceTabelle_v02.pdf}
