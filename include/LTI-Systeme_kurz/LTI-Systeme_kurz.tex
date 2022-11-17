@@ -1,10 +1,7 @@
-% Needs Package: 
+%Needs Package: 
 %\usepackage{bm}
 %\usepackage{multicol}
 \section{LTI-Systeme}
-
-$ y(t) = \mathcal{T}[x(t)]$
-
 \begin{multicols}{2}
     \subsection*{Linearität und Zeitinvarianz}
     \begin{itemize}
@@ -23,7 +20,7 @@ $ y(t) = \mathcal{T}[x(t)]$
     $$ y(t) = \mathcal{T}[x(t)]
         = \int \limits _{-\infty} ^{\infty} x(\tau) \cdot h(t-\tau)d\tau
         = x(t) * h(t)$$
-  
+
     \subsubsection{Frequenzantwort}
     Die \textbf{Frequenzantwort} $\bm{H(\omega)}$ ist die Fouriertransformierte Impulsantwort.
     Sie ist eine komplexwertige dimensionslose Gewichstsfunktion.
@@ -32,11 +29,10 @@ $ y(t) = \mathcal{T}[x(t)]$
     $$ Y(\omega) = X(\omega) \cdot H(\omega)$$
 
     \subsubsection{Berechnung des Ausgangssignals}
-\begin{enumerate}
-   \item Fourier-Transformation:  $X(\omega) = \mathcal{F}[x(t)]$ 
-   \item Berechnung in Frequenz  $Y(\omega) = X(\omega) \cdot H(\omega)$ 
-   \item Rücktransformation:  $y(t) = \mathcal{F}^{-1}[Y(\omega)]$ 
-\end{enumerate}
+    1. Fourier-Transformation:  $X(\omega) = \mathcal{F}[x(t)]$ \\
+    2. Berechnung in Frequenz:  $Y(\omega) = X(\omega) \cdot H(\omega)$ \\
+    3. Rücktransformation:  $y(t) = \mathcal{F}^{-1}[Y(\omega)]$
+
 
 
     \subsection{Bezeichnungen}
@@ -49,10 +45,12 @@ $ y(t) = \mathcal{T}[x(t)]$
     $|Y(\omega)| = |X(\omega)| \cdot |H(\omega)|$ \\
     $\varphi_y(\omega) = \varphi_x(\omega) + \varphi_H(\varphi)$
 
-    \subsection{BIBO-Stabilität}
-    Ein LTI-System ist genau dann BIBO-stabil, wenn die Konvergenzhalbebene seiner Übertragungsfunktion G = G(s) die imaginäre Achse (also die jω-Achse) enthält.
-Das wiederum ist dann der Fall, wenn alle Polstellen sp der Übertragungsfunktion links von
-der imaginären Achse liegen, d.h. wenn jeweils Re(sp) < 0.
-\includegraphics[width = 3cm]{include/Integraltransformationen/img/BiBo.png}
+    \subsection{BIBO-Stabilität \tiny {Bound-Input-Bound-Output}}
 
+    Systemantwort Begrenzt, wenn Eingangssignal Begrenzt
+    \newline $\Rightarrow$ Konvergenzhalbebene Übertragungsfunktion enthält Imaginär-Achse
+    \newline $\Rightarrow$ Alle Polstellen Übertragungsfunktion links von "$j$-Achse"
+    \begin{center}
+        \includegraphics[width = 4cm]{include/Integraltransformationen/img/BiBo.png}
+    \end{center}
 \end{multicols}

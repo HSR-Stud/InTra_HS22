@@ -5,6 +5,7 @@
 %\usepackage{color, colortbl}
 %\usepackage{trfsigns}
 %\usepackage{graphicx}
+%\usepackage{adjustbox}
 %\definecolor{TabularBackgroundColor}{rgb}{0.83,0.96,0.96}
 
 
@@ -14,23 +15,19 @@
 
 \section{Wichtige Funktionen}
 
+\small
+
+\subsubsection*{Diracimpuls \tiny (auch Impuls-/Deltafunktion,-Distribution)}
+
 \begin{multicols}{2}
-  \small
-  \subsubsection*{Sprungfunktion (Heaviside)}
-  \includegraphics[width = 5cm]{include/Wichtige Funktionen/img/Sprungfunktion.png}
-  \\ $H(t) = u(t) = \begin{cases}
-      0 \textrm{ für }  t<0,                                                     \\
-      [\frac{1}{2} \textrm{ für }  t = 0,] \textrm{ \tiny(machmal: 1 für $t=0$)} \\
-      1 \textrm{ für }  t >0.
-    \end{cases}   $
-  \\
-  \subsubsection*{Diracimpuls \tiny (auch Impuls-/Deltafunktion,-Distribution)}
+
   \includegraphics[width = 5cm]{include/Wichtige Funktionen/img/Impulsfunktion.png}
-  \\ \footnotesize
-  Unendlich kurzer, normierter Impuls mit unendlicher Amplitude.
-  \\Eigenschaften:\\
-  \resizebox{0.4\textwidth}{!}{%
-    \begin{tabular}{ccc}
+
+  {\footnotesize
+    Unendlich kurzer, normierter Impuls mit unendlicher Amplitude. }
+
+  \resizebox{0.5\textwidth}{!}{%
+    \begin{tabular}{ccl}
       \hline \rowcolor{TabularBackgroundColor}
       1.  & $\delta(-t) = \delta(t) $                                                                                            & gerade Funktion                        \\
       \hline
@@ -63,40 +60,110 @@
       15. & $f(t) * \frac{d\delta(t-t_0)}{dt} = \frac{df(t-t_0)}{dt}$                                                            & Faltung mit Ableitung                  \\
       \hline
       16. & $\frac{d\delta(t)}{dt} = \frac{\delta(t)}{-t} = \lim _{\epsilon \to 0} \frac{-2\epsilon t}{\pi(t^2 + \epsilon^2)^2}$ & 1. Ableitung $\delta(t)$ = ungerade F. \\
+      \hline \rowcolor{TabularBackgroundColor}
+      17. & $1$ \laplace $2\pi\delta(\omega)$                                                                                    & Fourier                                \\
       \hline
+      18. & $\delta(t)$ \laplace $1(\omega)$                                                                                     & Fourier                                \\
     \end{tabular}}
-  \subsubsection*{Signumfunktion (Vorzeichenfunktion)}
-  \includegraphics[width = 5cm]{include/Wichtige Funktionen/img/Signumfunktion.png}
-  \footnotesize
-  \\ $sgn(t) = \begin{cases}
-      -1 \textrm{ für }  t<0,  \\
-      0 \textrm{ für }  t = 0, \\
-      1 \textrm{ für }  t >0.
-    \end{cases}   $                                                          \\
-  \subsubsection*{Rampenfunktion}
-  \includegraphics[width=5cm]{include/Wichtige Funktionen/img/Rampenfunktion.png}
-  \footnotesize
-  \\ $r(t) = \begin{cases}
-      0 \textrm{ für } t \leq 0, \\
-      t \textrm{ für } t > 0.
-    \end{cases}$                                                          \\
-  \subsubsection*{Rechteckimpuls}
-  \includegraphics[width=5cm]{include/Wichtige Funktionen/img/Rechteckimpuls.png}
-  \footnotesize
-  \\ $p_a(t) = u(t+a)-u(t-a)= \begin{cases}
-      1 \textrm{ für } |t| < a,           \\
-      \frac{1}{2} \textrm{ für } |t| = a, \\
-      0 \textrm{ für } |t| > a.
-    \end{cases} $                               \\
-  \subsubsection*{Dreieckimpuls}
-  \includegraphics[width=5cm]{include/Wichtige Funktionen/img/Dreieckimpuls.png}
-  \footnotesize
-  \\ $\Lambda(t) = \begin{cases}
-      1 - \frac{|t|}{a} \textrm{ für } |t| < a \\
-      0 \textrm{ für } |t| \geq a
-    \end{cases}$                                      \\
-  \subsubsection*{Sinc-Funktion}
-  \includegraphics[width=5cm]{include/Wichtige Funktionen/img/SincFunktion.png}
-  \footnotesize
-  \\ $sinc(t) = \frac{sin(t)}{t} \forall t$                                                                                   \\
 \end{multicols}
+  \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{2cm}|p{3cm}|p{3.5cm}|}
+    \hline
+
+    \textbf{Name}
+     &
+    \textbf{Definition}
+     &
+    \laplace
+     &
+    \textbf{Formelzeichen}
+     &
+    \textbf{plot}
+    \\
+    \hline
+    Sprungfunktion
+    \newline (Heaviside)
+     &
+    $\begin{cases}
+         0 \textrm{ für }  t<0,               \\
+         [\frac{1}{2} \textrm{ für }  t = 0,] \\
+         1 \textrm{ für }  t >0.
+       \end{cases}$
+    \newline \tiny(machmal: 1 für $t=0$)
+     &
+    $\frac{1}{j\omega} + \pi\delta(\omega)$
+     &
+    $u(t), \sigma(t), h(t)$
+     &
+    \raisebox{-.5\height}{\includegraphics[width = 3.5cm]{include/Wichtige Funktionen/img/Sprungfunktion.png}}
+    \\
+    Signumfunktion
+    \newline (Vorzeichenfunktion)
+     &
+    $\begin{cases}
+         -1 \textrm{ für }  t<0,  \\
+         0 \textrm{ für }  t = 0, \\
+         1 \textrm{ für }  t >0.
+       \end{cases}   $
+     &
+    $\frac{2}{j\omega}$
+     &
+    $sgn(t)$
+     &
+    \raisebox{-.5\height}{\includegraphics[width=3.5cm]{include/Wichtige Funktionen/img/Signumfunktion.png}}
+    \\
+    Rampenfunktion
+     &
+    $\begin{cases}
+         0 \textrm{ für } t \leq 0, \\
+         t \textrm{ für } t > 0.
+       \end{cases}$
+     &
+    $\frac{1}{s^2}$
+     &
+    $r(t)$
+     &
+    \raisebox{-.5\height}{\includegraphics[width=3.5cm]{include/Wichtige Funktionen/img/Rampenfunktion.png}}
+    \\
+    Rechteckimpuls
+     &
+    $\begin{cases}
+         1 \textrm{ für } |t| < a,           \\
+         \frac{1}{2} \textrm{ für } |t| = a, \\
+         0 \textrm{ für } |t| > a.
+       \end{cases} $
+     &
+    $\frac{1}{s}- e^{-as}\frac{1}{s} $
+     &
+    $p_a(t), \beta(t)$
+    \newline $\sigma(t+a)-\sigma(t-a)$
+     &
+    \raisebox{-.5\height}{\includegraphics[width=3.5cm]{include/Wichtige Funktionen/img/Rechteckimpuls.png}}
+    \\
+    Dreieckimpuls
+     &
+    $\begin{cases}
+         1 - \frac{|t|}{a} \textrm{ für } |t| < a \\
+         0 \textrm{ für } |t| \geq a
+       \end{cases}$
+     &
+    $sinc^2(\omega)$
+     &
+    $\Lambda(t)$
+     &
+    \raisebox{-.5\height}{\includegraphics[width=3.5cm]{include/Wichtige Funktionen/img/Dreieckimpuls.png}}
+    \\
+    Sinc-Funktion
+     &
+    $\frac{sin(t)}{t}\; \forall t$
+    \newline {\tiny $\lim _{t \to 0} sinc(t) = 1$}
+    \newline {\tiny wenn normalisiert: $t \to \pi t$}
+     &
+    $\beta(\omega)$
+    \newline{\tiny(Rechteckimpuls)}
+     &
+    sinc(t)
+     &
+    \raisebox{-.5\height}{\includegraphics[width=3.5cm]{include/Wichtige Funktionen/img/SincFunktion.png}}
+    \\
+    \hline
+  \end{tabular}

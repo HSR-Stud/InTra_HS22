@@ -36,7 +36,7 @@
     \item Integrale Bestimmen, Integralgrenzen = Eingezeichnete Grenzen im Diagramm.
     \item Integrale auflösen
   \end{enumerate}
-  \includegraphics[width = 5cm]{include/Integraltransformationen/img/Faltungsgrenzen.png}
+  \includegraphics[width = 4.5cm]{include/Integraltransformationen/img/Faltungsgrenzen.png}
   \\\textbf{Beispiel}
   \\$f(t)= \begin{cases}
     2 \textrm{ für } 0 <t<4 \\
@@ -46,22 +46,22 @@
     3 \textrm{ für } 0<t<1 \\
     0 \textrm{ sonst}
   \end{cases}$
-  \\1.$(f * g)(t) \int \limits _{-\infty} ^{\infty} f(\tau)g(t-\tau)d\tau$
-  \\2.  $f(t): 0<\tau<4g(t): 0<t-\tau<1 \Rightarrow t-1 < \tau < t$
-  \\3.  \includegraphics[width = 2cm]{include/Integraltransformationen/img/Bsp_Grenzen.png}
-  \\4. und 5. $(f*g)(t) =$
-  \\$t \leq 0: 0$
+    \\1.$(f * g)(t) \int \limits _{-\infty} ^{\infty} f(\tau)g(t-\tau)d\tau$
+    \\2.  $f(t): 0<\tau<4g(t): 0<t-\tau<1 \Rightarrow t-1 < \tau < t$
+    \\3.  \includegraphics[width = 2cm]{include/Integraltransformationen/img/Bsp_Grenzen.png}
+    \\4. und 5. $(f*g)(t) =$
+    \\$t \leq 0: 0$
   \\$0 < t \leq 1: \int \limits _0 ^t 2 \cdot 3 d\tau$
-  \\$1<t \leq 4: \int \limits _{t-1} ^t 2\cdot 3 d\tau$
+    \\$1<t \leq 4: \int \limits _{t-1} ^t 2\cdot 3 d\tau$
   \\$4 <t \leq 5: \int \limits _{t-1} ^4 2\cdot 3 d\tau$
-  \\$5< t: 0$
+    \\$5< t: 0$
 
 \end{multicols}
 
 
 \subsection{Fourier-Reihe und Transformation}
 \subsubsection*{Fourier-Reihe}
-\begin{tabular}{p{4.5cm}p{13.5cm}}
+\begin{tabular}{p{4.5cm}p{11.5cm}}
   Trigonometrische Form    &
   $x(t) = \frac{a_0}{2} + \sum \limits _{n = 1} ^{\infty} a_n \cdot cos(2\pi n f_0 \cdot t) + b_n \cdot sin(2\pi n f_0 \cdot t) $
   \newline $a_n = \frac{2}{T} \int \limits _{T} x(t) dt$
@@ -100,23 +100,27 @@
 
 \subsection{Laplace-Transformation}
 \begin{multicols}{2}
-  
+
   $$F(s) = \mathscr{L} {f(t)} = \int \limits _{0} ^{\infty} f(t) \cdot e^{-st} dt \textrm{ mit } s \in \mathbb{C}$$
   $$f(t) = \mathscr{L}^{-1} {f(t)} = \frac{1}{2\pi j} \int \limits _{p_0-j\infty} ^{p_0 + j\infty} F(s) \cdot e^{st} ds$$
   Rechenregeln Siehe Anhang.
   \subsubsection*{Lineare Differenzialgleichungen lösen:}
-  DGL in Bildbereich Transformieren $\Rightarrow$ DGL ist jetzt lineare Gleichung
+  DGL in Bildbereich Transformieren \\ $\Rightarrow$ DGL ist jetzt lineare Gleichung
   \\Gleichung auflösen
   \\Lösung Rücktransformieren
-  
+
   \subsubsection*{Zusammenhänge}
-  \includegraphics[width = 5cm]{include/Integraltransformationen/img/Zusammenhang_Laplace.png}
+  \includegraphics[width = 7cm]{include/Integraltransformationen/img/Zusammenhang_Laplace.png}
+
+  \subsubsection*{Konvergenzhalbebene}
+  Die Konvergenzhalbebene beginnt bei der Polstelle der Laplace-Transformierten mit dem Grössete Realteil und geht bis unendlich.
+  \newline Bsp: Bei $\frac{1}{s-2}$ ist die Polstelle bei $+2$, daraus folgt: Konvergenzhalbebene $= [2,\infty)$
 \end{multicols}
 
-  \subsection{Hilbert-Transformation}
-  \begin{multicols}{2}
-    Im \textbf{Zeitbereich:}
-    $$\hat{x}(t) = x(t) * \frac{1}{\pi t} = \frac{1}{\pi} \int \limits _{-\infty} ^{\infty} \frac{x(\tau)}{t-\tau} d\tau$$
-    Im \textbf{Frequenzbereich}:
-    $$\hat{X}(\omega) = X(\omega) \cdot H(\omega) = -j \cdot sgn(\omega) \cdot X(\omega)$$
+\subsection{Hilbert-Transformation}
+\begin{multicols}{2}
+  Im \textbf{Zeitbereich:}
+  $$\hat{x}(t) = x(t) * \frac{1}{\pi t} = \frac{1}{\pi} \int \limits _{-\infty} ^{\infty} \frac{x(\tau)}{t-\tau} d\tau$$
+  Im \textbf{Frequenzbereich}:
+  $$\hat{X}(\omega) = X(\omega) \cdot H(\omega) = -j \cdot sgn(\omega) \cdot X(\omega)$$
 \end{multicols}
